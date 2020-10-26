@@ -3,7 +3,7 @@ Function bar1(na, o)
 
     Dim str As String, str1 As String, str2 As String
 
-    
+
     str = na
     str1 = "@"
     str2 = "-"
@@ -19,7 +19,7 @@ Function bar1(na, o)
                         ty = 0
                     End If
         End If
-    
+
     If ty = 0 Then
             yk = na
             n = 1
@@ -40,20 +40,20 @@ Select Case yk
     Case "D10"
     a = 71
     fi = 30
-    
+
     Case "D10D13"
     a = (71 + 127) / 2
     fi = (30 + 40) / 2
-    
-    
+
+
     Case "D13"
     a = 127
     fi = 40
-    
+
     Case "D13D16"
     a = (127 + 199) / 2
     fi = (40 + 50) / 2
-    
+
     Case "D16"
     a = 199
     fi = 50
@@ -66,6 +66,5 @@ End Select
         bar1 = a * n
     End If
     
-
 'Cells(54, 22) = bar1
 End Function
