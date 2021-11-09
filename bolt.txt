@@ -1,0 +1,199 @@
+Function HTB(m,n,f)
+
+    Dim str As String, str1 As String, str2 As String
+
+      if f="" Then
+        f=x
+      Else
+        f=o
+      end if
+
+      if f=x Then
+        Select Case fai
+          case "M12"
+            a=12
+            b=14
+            c=113
+            d=84.3
+            e=56.9
+            f=17
+            1=33.9
+            2=35.1
+            i=67.9
+            j=136
+            k=84
+          case "M16"
+            a=16
+            b=18
+            c=201
+            d=157
+            e=106
+            f=30.2
+            1=60.3
+            2=62.3
+            i=121
+            j=241
+            k=157
+          case "M20"
+            a=20
+            b=22
+            c=314
+            d=245
+            e=165
+            f=47.1
+            1=94.2
+            2=97.4
+            i=188
+            j=377
+            k=245
+          csse "M22"
+            a=22
+            b=24
+            c=380
+            d=303
+            e=205
+            f=57
+            1=114
+            2=118
+            i=228
+            j=456
+            k=303
+          case "M24"
+            a=24
+            b=26
+            c=452
+            d=353
+            e=238
+            f=67.9
+            1=136
+            2=140
+            i=271
+            j=542
+            k=353
+          case "M27"
+            a=27
+            b=30
+            c=572
+            d=459
+            e=310
+            f=85.9
+            1=172
+            2=177
+            i=343
+            j=686
+            k=459
+          case "M30"
+            a=30
+            b=33
+            c=707
+            d=561
+            e=379
+            f=106
+            1=212
+            2=219
+            i=424
+            j=848
+            k=561
+        End Select
+      Else
+        Select Case fai
+          case "M12"
+            a=12
+            b=14
+            c=113
+            d=84.3
+            e=45.8
+            f=13.6
+            1=27.1
+            2=28.2
+            i=54.2
+            j=108
+            k=67.2
+          case "M16"
+            a=16
+            b=18
+            c=201
+            d=157
+            e=85.2
+            f=24.1
+            1=48.2
+            2=50.3
+            i=96.5
+            j=193
+            k=125
+          case "M20"
+            a=20
+            b=22
+            c=314
+            d=245
+            e=133
+            f=37.7
+            1=75.4
+            2=78.5
+            i=151
+            j=301
+            k=196
+          case "M22"
+            a=22
+            b=24
+            c=380
+            d=303
+            e=165
+            f=45.6
+            1=91.2
+            2=95
+            i=182
+            j=365
+            k=242
+          case "M24"
+            a=22
+            b=24
+            c=380
+            d=303
+            e=165
+            f=45.6
+            1=91.2
+            2=95
+            i=182
+            j=365
+            k=242
+          case "M27"
+            a=27
+            b=30
+            c=572
+            d=459
+            e=250
+            f=68.6
+            1=137
+            2=143
+            i=274
+            j=549
+            k=367
+          case "M30"
+            a=30
+            b=33
+            c=70
+            d=561
+            e=305
+            f=84.8
+            1=170
+            2=177
+            i=339
+            j=679
+            k=448
+          End Select
+        end if
+
+    If a_f = 2 Then
+        bar_ans = fi * num
+    ElseIf a_f = 3 Then
+        bar_ans = d
+    ElseIf a_f = 4 Then
+        bar_ans = dm
+    Else
+        bar_ans = a * num
+    End If
+
+bar_1 = bar_ans
+
+End Function
