@@ -1,199 +1,390 @@
-Function HTB(m,n,f)
+Function HTB(m, num, f)
 
-    Dim str As String, str1 As String, str2 As String
+    If f = 10 Then
+        Select Case m
+          Case 12
+            Select Case num
+              Case "a"
+                ans = 12
+              Case "b"
+                ans = 14
+              Case "c"
+                ans = 113
+              Case "d"
+                ans = 84.3
+              Case "e"
+                ans = 56.9
+              Case "f"
+                ans = 17
+              Case "g"
+                ans = 33.9
+              Case "h"
+                ans = 35.1
+              Case "i"
+                ans = 67.9
+              Case "j"
+                ans = 136
+              Case "k"
+                ans = 84
+            End Select
+          Case 16
+            Select Case num
+              Case "a"
+                ans = 16
+              Case "b"
+                ans = 18
+              Case "c"
+                ans = 201
+              Case "d"
+                ans = 157
+              Case "e"
+                ans = 106
+              Case "f"
+                ans = 30.2
+              Case "g"
+                ans = 60.3
+              Case "h"
+                ans = 62.3
+              Case "i"
+                ans = 121
+              Case "j"
+                ans = 241
+              Case "k"
+                ans = 157
+            End Select
+          Case 20
+            Select Case num
+              Case "a"
+                ans = 20
+              Case "b"
+                ans = 22
+              Case "c"
+                ans = 314
+              Case "d"
+                ans = 245
+              Case "e"
+                ans = 165
+              Case "f"
+                ans = 47.1
+              Case "g"
+                ans = 94.2
+              Case "h"
+              ans = 97.4
+              Case "i"
+              ans = 188
+              Case "j"
+              ans = 377
+              Case "k"
+              ans = 245
+            End Select
+          Case 22
+            Select Case num
+              Case "a"
+              ans = 22
+              Case "b"
+              ans = 24
+              Case "c"
+              ans = 380
+              Case "d"
+              ans = 303
+              Case "e"
+              ans = 205
+              Case "f"
+              ans = 57
+              Case "g"
+              ans = 114
+              Case "h"
+              ans = 118
+              Case "i"
+              ans = 228
+              Case "j"
+              ans = 456
+              Case "k"
+              ans = 303
+            End Select
+          Case 24
+            Select Case num
+              Case "a"
+              ans = 24
+              Case "b"
+              ans = 26
+              Case "c"
+              ans = 452
+              Case "d"
+              ans = 353
+              Case "e"
+              ans = 238
+              Case "f"
+              ans = 67.9
+              Case "g"
+              ans = 136
+              Case "h"
+              ans = 140
+              Case "i"
+              ans = 271
+              Case "j"
+              ans = 542
+              Case "k"
+              ans = 353
+            End Select
+          Case 27
+            Select Case num
+              Case "a"
+              ans = 27
+              Case "b"
+              ans = 30
+              Case "c"
+              ans = 572
+              Case "d"
+              ans = 459
+              Case "e"
+              ans = 310
+              Case "f"
+              ans = 85.9
+              Case "g"
+              ans = 172
+              Case "h"
+              ans = 177
+              Case "i"
+              ans = 343
+              Case "j"
+              ans = 686
+              Case "k"
+              ans = 459
+            End Select
+          Case 30
+            Select Case num
+              Case "a"
+ans = 30
+Case "b"
+ans = 33
+Case "c"
+ans = 707
+Case "d"
+ans = 561
+Case "e"
+ans = 379
+Case "f"
+ans = 106
+Case "g"
+ans = 212
+Case "h"
+ans = 219
+Case "i"
+ans = 424
+Case "j"
+ans = 848
+Case "k"
+ans = 561
 
-      if f="" Then
-        f=x
-      Else
-        f=o
-      end if
+End Select
+End Select
 
-      if f=x Then
-        Select Case fai
-          case "M12"
-            a=12
-            b=14
-            c=113
-            d=84.3
-            e=56.9
-            f=17
-            1=33.9
-            2=35.1
-            i=67.9
-            j=136
-            k=84
-          case "M16"
-            a=16
-            b=18
-            c=201
-            d=157
-            e=106
-            f=30.2
-            1=60.3
-            2=62.3
-            i=121
-            j=241
-            k=157
-          case "M20"
-            a=20
-            b=22
-            c=314
-            d=245
-            e=165
-            f=47.1
-            1=94.2
-            2=97.4
-            i=188
-            j=377
-            k=245
-          csse "M22"
-            a=22
-            b=24
-            c=380
-            d=303
-            e=205
-            f=57
-            1=114
-            2=118
-            i=228
-            j=456
-            k=303
-          case "M24"
-            a=24
-            b=26
-            c=452
-            d=353
-            e=238
-            f=67.9
-            1=136
-            2=140
-            i=271
-            j=542
-            k=353
-          case "M27"
-            a=27
-            b=30
-            c=572
-            d=459
-            e=310
-            f=85.9
-            1=172
-            2=177
-            i=343
-            j=686
-            k=459
-          case "M30"
-            a=30
-            b=33
-            c=707
-            d=561
-            e=379
-            f=106
-            1=212
-            2=219
-            i=424
-            j=848
-            k=561
-        End Select
-      Else
-        Select Case fai
-          case "M12"
-            a=12
-            b=14
-            c=113
-            d=84.3
-            e=45.8
-            f=13.6
-            1=27.1
-            2=28.2
-            i=54.2
-            j=108
-            k=67.2
-          case "M16"
-            a=16
-            b=18
-            c=201
-            d=157
-            e=85.2
-            f=24.1
-            1=48.2
-            2=50.3
-            i=96.5
-            j=193
-            k=125
-          case "M20"
-            a=20
-            b=22
-            c=314
-            d=245
-            e=133
-            f=37.7
-            1=75.4
-            2=78.5
-            i=151
-            j=301
-            k=196
-          case "M22"
-            a=22
-            b=24
-            c=380
-            d=303
-            e=165
-            f=45.6
-            1=91.2
-            2=95
-            i=182
-            j=365
-            k=242
-          case "M24"
-            a=22
-            b=24
-            c=380
-            d=303
-            e=165
-            f=45.6
-            1=91.2
-            2=95
-            i=182
-            j=365
-            k=242
-          case "M27"
-            a=27
-            b=30
-            c=572
-            d=459
-            e=250
-            f=68.6
-            1=137
-            2=143
-            i=274
-            j=549
-            k=367
-          case "M30"
-            a=30
-            b=33
-            c=70
-            d=561
-            e=305
-            f=84.8
-            1=170
-            2=177
-            i=339
-            j=679
-            k=448
-          End Select
-        end if
 
-    If a_f = 2 Then
-        bar_ans = fi * num
-    ElseIf a_f = 3 Then
-        bar_ans = d
-    ElseIf a_f = 4 Then
-        bar_ans = dm
-    Else
-        bar_ans = a * num
-    End If
+    ElseIf f = 8 Then
+        Select Case m
+            Case 12
+                Select Case num
+                Case "a"
+ans = 12
+Case "b"
+ans = 14
+Case "c"
+ans = 113
+Case "d"
+ans = 84.3
+Case "e"
+ans = 45.8
+Case "f"
+ans = 13.6
+Case "g"
+ans = 27.1
+Case "h"
+ans = 28.2
+Case "i"
+ans = 54.2
+Case "j"
+ans = 108
+Case "k"
+ans = 67.2
 
-bar_1 = bar_ans
+End Select
+            Case 16
+                Select Case num
+                Case "a"
+ans = 16
+Case "b"
+ans = 18
+Case "c"
+ans = 201
+Case "d"
+ans = 157
+Case "e"
+ans = 85.2
+Case "f"
+ans = 24.1
+Case "g"
+ans = 48.2
+Case "h"
+ans = 50.3
+Case "i"
+ans = 96.5
+Case "j"
+ans = 193
+Case "k"
+ans = 125
+End Select
+
+
+            Case 20
+                Select Case num
+Case "a"
+ans = 20
+Case "b"
+ans = 22
+Case "c"
+ans = 314
+Case "d"
+ans = 245
+Case "e"
+ans = 133
+Case "f"
+ans = 37.7
+Case "g"
+ans = 75.4
+Case "h"
+ans = 78.5
+Case "i"
+ans = 151
+Case "j"
+ans = 301
+Case "k"
+ans = 196
+
+
+
+End Select
+            Case 22
+                Select Case num
+Case "a"
+ans = 22
+Case "b"
+ans = 24
+Case "c"
+ans = 380
+Case "d"
+ans = 303
+Case "e"
+ans = 165
+Case "f"
+ans = 45.6
+Case "g"
+ans = 91.2
+Case "h"
+ans = 95
+Case "i"
+ans = 182
+Case "j"
+ans = 365
+Case "k"
+ans = 242
+
+
+
+
+End Select
+            Case 24
+                Select Case num
+
+                Case "a"
+ans = 24
+Case "b"
+ans = 26
+Case "c"
+ans = 452
+Case "d"
+ans = 353
+Case "e"
+ans = 192
+Case "f"
+ans = 54.2
+Case "g"
+ans = 108
+Case "h"
+ans = 113
+Case "i"
+ans = 217
+Case "j"
+ans = 434
+Case "k"
+ans = 282
+
+
+
+End Select
+            Case 27
+                Select Case num
+Case "a"
+ans = 27
+Case "b"
+ans = 30
+Case "c"
+ans = 572
+Case "d"
+ans = 459
+Case "e"
+ans = 250
+Case "f"
+ans = 68.6
+Case "g"
+ans = 137
+Case "h"
+ans = 143
+Case "i"
+ans = 274
+Case "j"
+ans = 549
+Case "k"
+ans = 367
+
+End Select
+
+
+
+
+            Case 30
+                Select Case num
+                Case "a"
+ans = 30
+Case "b"
+ans = 33
+Case "c"
+ans = 70
+Case "d"
+ans = 561
+Case "e"
+ans = 305
+Case "f"
+ans = 84.8
+Case "g"
+ans = 170
+Case "h"
+ans = 177
+Case "i"
+ans = 339
+Case "j"
+ans = 679
+Case "k"
+ans = 448
+
+
+
+End Select
+
+End Select
+End If
+
+
+HTB = ans
 
 End Function
