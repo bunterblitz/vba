@@ -1,6 +1,35 @@
-Function HTB(m, num, f)
+Function HTB(use_b, Optional num As String = "f", Optional ft As Long = 10)
 
-    If f = 10 Then
+    q = Len(use_b)
+    If q = 3 Then
+        s = 1
+    Else
+        s = Left(use_b, q - 4)
+    End If
+
+    y = num
+    m = Right(use_b, 2)
+
+    If y = 1 Then
+        num = "f"
+    ElseIf y = 2 Then
+        num = "g"
+    Else
+        num = y
+    End If
+
+    If ft = 10 Then
+        ans = HTB10(m, num)
+    Else
+        ans = HTB8(m, num)
+    End If
+
+    HTB = ans
+
+End Function
+
+Function HTB10(ByVal m As Integer, ByVal num As String)
+
         Select Case m
           Case 12
             Select Case num
@@ -155,11 +184,11 @@ Function HTB(m, num, f)
           Case 30
             Select Case num
               Case "a"
-ans = 30
-Case "b"
-ans = 33
-Case "c"
-ans = 707
+                ans = 30
+                Case "b"
+                ans = 33
+                Case "c"
+                ans = 707
 Case "d"
 ans = 561
 Case "e"
@@ -180,8 +209,12 @@ ans = 561
 End Select
 End Select
 
+    HTB10 = ans
+End Function
 
-    ElseIf f = 8 Then
+Function HTB8(m, num)
+
+'    ElseIf ft = 8 Then
         Select Case m
             Case 12
                 Select Case num
@@ -289,9 +322,6 @@ ans = 365
 Case "k"
 ans = 242
 
-
-
-
 End Select
             Case 24
                 Select Case num
@@ -349,9 +379,6 @@ ans = 367
 
 End Select
 
-
-
-
             Case 30
                 Select Case num
                 Case "a"
@@ -382,9 +409,8 @@ ans = 448
 End Select
 
 End Select
-End If
-
-
-HTB = ans
-
+'End If
+    HTB8 = ans
 End Function
+ '   HTB = ans
+'End Function
