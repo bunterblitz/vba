@@ -23,8 +23,14 @@ Function HTB(use_b, Optional num As String = "f", Optional ft As Long = 10)
     Else
         ans = HTB8(m, num)
     End If
-
-    HTB = ans
+    
+    If s = 1 Then
+        n = 1
+    Else
+        n = Left(use_b, q - 4)
+    End If
+    
+    HTB = ans * n
 
 End Function
 
@@ -414,3 +420,4 @@ End Select
 End Function
  '   HTB = ans
 'End Function
+
