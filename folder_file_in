@@ -1,0 +1,10 @@
+ub Sample1()
+    Dim buf As String, cnt As Long
+    Const Path As String = "C:\Users\scipi\OneDrive\デスクトップ\MYGH072203162336\"
+    buf = Dir(Path & "*.*")
+    Do While buf <> ""
+        cnt = cnt + 1
+        Cells(cnt, 1) = buf
+        buf = Dir()
+    Loop
+End Sub

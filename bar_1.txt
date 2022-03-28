@@ -1,3 +1,4 @@
+
 Function bar_1(use_bar, a_f)
 
     Dim str As String, str1 As String, str2 As String
@@ -31,6 +32,9 @@ Function bar_1(use_bar, a_f)
     End If
 
 Select Case fai
+	
+	function bar_perf(d,perf)
+	select case perf
 
     Case "D10"
     a = 71
