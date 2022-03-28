@@ -19,6 +19,7 @@ Else
 num = y
 End If
 
+<<<<<<< HEAD
 If ft = 10 Then
 ans = HTB10(m, num)
 Else
@@ -26,6 +27,21 @@ ans = HTB8(m, num)
 End If
 
 HTB = ans * n
+=======
+    If ft = 10 Then
+        ans = HTB10(m, num)
+    Else
+        ans = HTB8(m, num)
+    End If
+    
+    If s = 1 Then
+        n = 1
+    Else
+        n = Left(use_b, q - 4)
+    End If
+    
+    HTB = ans * n
+>>>>>>> ecc5342d261b65fe253917e92208405055bb17bc
 
 End Function
 
@@ -415,3 +431,4 @@ End Select
 End Function
  '   HTB = ans
 'End Function
+
