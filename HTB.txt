@@ -1,0 +1,424 @@
+Function HTB(use_b, Optional num As String = "f", Optional ft As Long = 10)
+
+    q = Len(use_b)
+    If q = 3 Then
+        s = 1
+    Else
+        s = Left(use_b, q - 4)
+    End If
+
+    y = num
+    m = Right(use_b, 2)
+
+    If y = 1 Then
+        num = "f"
+    ElseIf y = 2 Then
+        num = "g"
+    Else
+        num = y
+    End If
+
+    If ft = 10 Then
+        ans = HTB10(m, num)
+    Else
+        ans = HTB8(m, num)
+    End If
+    
+    If s = 1 Then
+        n = 1
+    Else
+        n = Left(use_b, q - 4)
+    End If
+    
+    HTB = ans * n
+
+End Function
+
+Function HTB10(ByVal m As Integer, ByVal num As String)
+
+        Select Case m
+          Case 12
+            Select Case num
+              Case "a"
+                ans = 12
+              Case "b"
+                ans = 14
+              Case "c"
+                ans = 113
+              Case "d"
+                ans = 84.3
+              Case "e"
+                ans = 56.9
+              Case "f"
+                ans = 17
+              Case "g"
+                ans = 33.9
+              Case "h"
+                ans = 35.1
+              Case "i"
+                ans = 67.9
+              Case "j"
+                ans = 136
+              Case "k"
+                ans = 84
+            End Select
+          Case 16
+            Select Case num
+              Case "a"
+                ans = 16
+              Case "b"
+                ans = 18
+              Case "c"
+                ans = 201
+              Case "d"
+                ans = 157
+              Case "e"
+                ans = 106
+              Case "f"
+                ans = 30.2
+              Case "g"
+                ans = 60.3
+              Case "h"
+                ans = 62.3
+              Case "i"
+                ans = 121
+              Case "j"
+                ans = 241
+              Case "k"
+                ans = 157
+            End Select
+          Case 20
+            Select Case num
+              Case "a"
+                ans = 20
+              Case "b"
+                ans = 22
+              Case "c"
+                ans = 314
+              Case "d"
+                ans = 245
+              Case "e"
+                ans = 165
+              Case "f"
+                ans = 47.1
+              Case "g"
+                ans = 94.2
+              Case "h"
+              ans = 97.4
+              Case "i"
+              ans = 188
+              Case "j"
+              ans = 377
+              Case "k"
+              ans = 245
+            End Select
+          Case 22
+            Select Case num
+              Case "a"
+              ans = 22
+              Case "b"
+              ans = 24
+              Case "c"
+              ans = 380
+              Case "d"
+              ans = 303
+              Case "e"
+              ans = 205
+              Case "f"
+              ans = 57
+              Case "g"
+              ans = 114
+              Case "h"
+              ans = 118
+              Case "i"
+              ans = 228
+              Case "j"
+              ans = 456
+              Case "k"
+              ans = 303
+            End Select
+          Case 24
+            Select Case num
+              Case "a"
+              ans = 24
+              Case "b"
+              ans = 26
+              Case "c"
+              ans = 452
+              Case "d"
+              ans = 353
+              Case "e"
+              ans = 238
+              Case "f"
+              ans = 67.9
+              Case "g"
+              ans = 136
+              Case "h"
+              ans = 140
+              Case "i"
+              ans = 271
+              Case "j"
+              ans = 542
+              Case "k"
+              ans = 353
+            End Select
+          Case 27
+            Select Case num
+              Case "a"
+              ans = 27
+              Case "b"
+              ans = 30
+              Case "c"
+              ans = 572
+              Case "d"
+              ans = 459
+              Case "e"
+              ans = 310
+              Case "f"
+              ans = 85.9
+              Case "g"
+              ans = 172
+              Case "h"
+              ans = 177
+              Case "i"
+              ans = 343
+              Case "j"
+              ans = 686
+              Case "k"
+              ans = 459
+            End Select
+          Case 30
+            Select Case num
+              Case "a"
+                ans = 30
+                Case "b"
+                ans = 33
+                Case "c"
+                ans = 707
+Case "d"
+ans = 561
+Case "e"
+ans = 379
+Case "f"
+ans = 106
+Case "g"
+ans = 212
+Case "h"
+ans = 219
+Case "i"
+ans = 424
+Case "j"
+ans = 848
+Case "k"
+ans = 561
+
+End Select
+End Select
+
+    HTB10 = ans
+End Function
+
+Function HTB8(m, num)
+
+'    ElseIf ft = 8 Then
+        Select Case m
+            Case 12
+                Select Case num
+                Case "a"
+ans = 12
+Case "b"
+ans = 14
+Case "c"
+ans = 113
+Case "d"
+ans = 84.3
+Case "e"
+ans = 45.8
+Case "f"
+ans = 13.6
+Case "g"
+ans = 27.1
+Case "h"
+ans = 28.2
+Case "i"
+ans = 54.2
+Case "j"
+ans = 108
+Case "k"
+ans = 67.2
+
+End Select
+            Case 16
+                Select Case num
+                Case "a"
+ans = 16
+Case "b"
+ans = 18
+Case "c"
+ans = 201
+Case "d"
+ans = 157
+Case "e"
+ans = 85.2
+Case "f"
+ans = 24.1
+Case "g"
+ans = 48.2
+Case "h"
+ans = 50.3
+Case "i"
+ans = 96.5
+Case "j"
+ans = 193
+Case "k"
+ans = 125
+End Select
+
+
+            Case 20
+                Select Case num
+Case "a"
+ans = 20
+Case "b"
+ans = 22
+Case "c"
+ans = 314
+Case "d"
+ans = 245
+Case "e"
+ans = 133
+Case "f"
+ans = 37.7
+Case "g"
+ans = 75.4
+Case "h"
+ans = 78.5
+Case "i"
+ans = 151
+Case "j"
+ans = 301
+Case "k"
+ans = 196
+
+
+
+End Select
+            Case 22
+                Select Case num
+Case "a"
+ans = 22
+Case "b"
+ans = 24
+Case "c"
+ans = 380
+Case "d"
+ans = 303
+Case "e"
+ans = 165
+Case "f"
+ans = 45.6
+Case "g"
+ans = 91.2
+Case "h"
+ans = 95
+Case "i"
+ans = 182
+Case "j"
+ans = 365
+Case "k"
+ans = 242
+
+End Select
+            Case 24
+                Select Case num
+
+                Case "a"
+ans = 24
+Case "b"
+ans = 26
+Case "c"
+ans = 452
+Case "d"
+ans = 353
+Case "e"
+ans = 192
+Case "f"
+ans = 54.2
+Case "g"
+ans = 108
+Case "h"
+ans = 113
+Case "i"
+ans = 217
+Case "j"
+ans = 434
+Case "k"
+ans = 282
+
+
+
+End Select
+            Case 27
+                Select Case num
+Case "a"
+ans = 27
+Case "b"
+ans = 30
+Case "c"
+ans = 572
+Case "d"
+ans = 459
+Case "e"
+ans = 250
+Case "f"
+ans = 68.6
+Case "g"
+ans = 137
+Case "h"
+ans = 143
+Case "i"
+ans = 274
+Case "j"
+ans = 549
+Case "k"
+ans = 367
+
+End Select
+
+            Case 30
+                Select Case num
+                Case "a"
+ans = 30
+Case "b"
+ans = 33
+Case "c"
+ans = 70
+Case "d"
+ans = 561
+Case "e"
+ans = 305
+Case "f"
+ans = 84.8
+Case "g"
+ans = 170
+Case "h"
+ans = 177
+Case "i"
+ans = 339
+Case "j"
+ans = 679
+Case "k"
+ans = 448
+
+
+
+End Select
+
+End Select
+'End If
+    HTB8 = ans
+End Function
+ '   HTB = ans
+'End Function
+
+
