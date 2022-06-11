@@ -1,0 +1,56 @@
+Function dampf(w, Alpha, Beta)
+    dampf = Alpha / w + Beta
+End Function
+Function CPX(A As Double, B As Double) As Complex
+    CPX.re = A
+    CPX.im = B
+End Function
+Function CEXP(Z As Complex) As Complex
+  CEXP.re = Exp(Z.re) * (Cos(Z.im))
+  CEXP.im = Exp(Z.re) * (Sin(Z.im))
+End Function
+Function CPXCLC(z1 As Complex, z2 As Complex, Optional s As Integer = 1) As Complex
+Dim k As Double
+Dim Z As Complex
+    Select Case s
+        Case 1
+            Z.re = z1.re + z2.re
+            Z.im = z1.im + z2.im
+        Case 2
+            Z.re = z1.re - z2.re
+            Z.im = z1.im - z2.im
+        Case 3
+            Z.re = z1.re * z2.re - z1.im * z2.im
+            Z.im = z1.re * z2.im + z1.im * z2.re
+        Case Else
+        k = z2.re ^ 2 + z2.im ^ 2
+        Z.re = (z1.re * z2.re + z1.im * z2.im) / k
+        Z.im = (z1.im * z2.re - z1.re * z2.im) / k
+    End Select
+        CPXCLC = Z
+End Function
+Function CJG(Z As Complex) As Complex
+  CJG.re = Z.re
+  CJG.im = -Z.im
+End Function
+Function CPXABS(Z As Complex, Optional s As Boolean = True) As Double
+  CPXABS = Z.re ^ 2 + Z.im ^ 2
+  If s = True Then
+    CPXABS = (CPXABS) ^ 0.5
+  End If
+End Function
+Function C_sqrt(Z As Complex) As Complex
+
+If Z.re = 0 And Z.im = 0 Then
+    C_sqrt.re = 0
+    C_sqrt.im = 0
+Else
+    Dim rr As Double
+    Dim phi As Double
+        rr = Sqr(Z.re ^ 2 + Z.im ^ 2)
+        phi = Atn(Z.im / Z.re)
+            If Z.im < 0 Then phi = 2 * 3.141592 - phi
+                C_sqrt.re = rr ^ (0.5) * Cos(0.5 * phi)
+                C_sqrt.im = rr ^ (0.5) * Sin(0.5 * phi)
+            End If
+End Function

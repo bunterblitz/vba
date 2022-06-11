@@ -1,0 +1,39 @@
+Public Function s_perf_b(num, n_col)
+
+    Dim ex As New Excel.Application
+    Dim sPath As String
+    Dim wb As Workbook
+    Dim rag1 As Range
+    Dim rag2 As Range
+    
+    For i = 1 To 10
+        a1 = Mid(num, i, 1)
+        a2 = Val(a1)
+            If a2 > 0 Then
+                Exit For
+            End If
+    Next
+         a3 = Left(num, i - 1)
+         
+    Set rag1 = Workbooks("s_sec_performance.xlam").Worksheets(a3).Range("b10:ae11")
+
+    a4 = Val(n_col)
+    
+    If a4 > 0 Then
+        r = n_col
+    Else
+        With ActiveSheet
+            r = Application.WorksheetFunction.HLookup(n_col, rag1, 2, False)
+        End With
+    End If
+    
+    Set rag2 = Workbooks("s_sec_performance.xlam").Worksheets(a3).Range("a1:ae250")
+    
+          
+    With ActiveSheet
+        ans = Application.WorksheetFunction.VLookup(num, rag2, r, False)
+    End With
+    
+    s_perf_b = ans
+    
+End Function
