@@ -1,0 +1,11 @@
+Function answer(r As Range)
+Dim siki As String
+    
+    siki = Replace(r.Value, "÷", "/")
+    siki = Replace(siki, "x", "*")
+    siki = Replace(siki, "＝", "")
+    siki = Replace(siki, "=", "")
+    
+    answer = Evaluate(siki)
+    
+End Function

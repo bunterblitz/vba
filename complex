@@ -1,0 +1,55 @@
+Function CPX(a As Double, b As Double) As Complex
+    CPX.re = a
+    CPX.im = b
+End Function
+
+Function CEXP(z As Complex) As Complex
+  CEXP.re = Exp(z.re) * (Cos(z.im))
+  CEXP.im = Exp(z.re) * (Sin(z.im))
+End Function
+
+Function CPXCLC(z1 As Complex, z2 As Complex, _
+Optional s As Integer = 1) As Complex
+Dim k As Double
+Dim z As Complex
+    Select Case s
+        Case 1
+            z.re = z1.re + z2.re
+            z.im = z1.im + z2.im
+        Case 2
+            z.re = z1.re - z2.re
+            z.im = z1.im - z2.im
+        Case 3
+            z.re = z1.re * z2.re - z1.im * z2.im
+            z.im = z1.re * z2.im + z1.im * z2.re
+        Case Else
+            k = z2.re ^ 2 + z2.im ^ 2
+                z.re = (z1.re * z2.re + z1.im * z2.im) / k
+                z.im = (z1.im * z2.re - z1.re * z2.im) / k
+    End Select
+    CPXCLC = z
+End Function
+
+Function CJG(z As Complex) As Complex
+  CJG.re = z.re
+  CJG.im = -z.im
+End Function
+Function CPXABS(z As Complex, Optional s As Boolean = True) As Double
+  CPXABS = z.re ^ 2 + z.im ^ 2
+  If s = True Then
+    CPXABS = Sqr(CPXABS)
+  End If
+End Function
+Function C_sqrt(z As Complex) As Complex
+    If z.re = 0 And z.im = 0 Then
+        C_sqrt.re = 0
+        C_sqrt.im = 0
+    Else
+    Dim rr As Double, phi As Double
+        rr = Math.Sqr(z.re ^ 2 + z.im ^ 2)
+        phi = Math.Atn(z.im / z.re)
+            If z.im < 0 Then phi = 2 * 3.141592 - phi
+                C_sqrt.re = rr ^ (0.5) * Math.Cos(0.5 * phi)
+                C_sqrt.im = rr ^ (0.5) * Math.Sin(0.5 * phi)
+            End If
+End Function

@@ -1,0 +1,38 @@
+
+Sub fast(ByRef x() As Complex, N As Integer, IND)
+Dim i As Single, j As Single, m As Single, k As Single
+Dim temp As Complex
+Dim kmax As Single, istep As Single
+Dim theta As Complex
+    j = 1
+    For i = 1 To N
+        If i < j Then
+            temp = x(j)
+            x(j) = x(i)
+            x(i) = temp
+        End If
+
+        m = N / 2
+        Do While (j > m)
+            j = j - m
+            m = m / 2
+                If m < 2 Then Exit Do
+        Loop
+        j = j + m
+    Next
+
+    kmax = 1
+    Do While kmax < N
+        istep = kmax * 2
+            For k = 1 To kmax
+                theta = CPX(0, 3.141593 * (IND * (k - 1) / kmax))
+                    For i = k To N Step istep
+                        j = i + kmax
+                        temp = CPXCLC(x(j), CEXP(theta), 3)
+                        x(j) = CPXCLC(x(i), temp, 2)
+                        x(i) = CPXCLC(x(i), temp, 1)
+                    Next i
+            Next k
+        kmax = istep
+    Loop
+End Sub
