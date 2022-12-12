@@ -1,0 +1,6 @@
+Sub DR_LINE(bx, by, ex, ey)
+    With ActiveSheet.Shapes.AddLine(bx, by, ex, ey)
+       .Line.ForeColor.SchemeColor = 8
+       .Name = "line01"
+    End With
+End Sub

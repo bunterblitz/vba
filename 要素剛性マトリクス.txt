@@ -1,0 +1,95 @@
+
+Sub 要素剛性マトリクス(ne)
+
+Dim ke(6, 6), t(6, 6), tke(6, 6)
+
+xi = xd(indv(ne, 1))
+yi = yd(indv(ne, 1))
+xj = xd(indv(ne, 2))
+yj = yd(indv(ne, 2))
+
+L = Sqr((xj - xi) ^ 2 + (yj - yi) ^ 2)  '要素長
+
+nem = nnd * ndg  'マトリクスのサイズ
+
+'[ke]のゼロクリアー
+For i = 1 To nem
+  For j = 1 To nem
+   ke(i, j) = 0#
+  Next j
+Next i
+
+'要素剛性マトリックス[ke]の計算
+cu = eyg(ne) * are(ne) / L
+ke(1, 1) = cu
+ke(4, 4) = ke(1, 1)
+ke(1, 4) = -ke(1, 1)
+ke(4, 1) = -ke(1, 1)
+
+cv = eyg(ne) * sii(ne) / L ^ 3
+ke(2, 2) = 12# * cv
+ke(5, 5) = ke(2, 2)
+ke(5, 2) = -ke(2, 2)
+ke(2, 5) = -ke(2, 2)
+
+ke(3, 2) = 6# * L * cv
+ke(2, 3) = ke(3, 2)
+ke(5, 3) = -ke(3, 2)
+ke(3, 5) = -ke(3, 2)
+ke(6, 2) = ke(3, 2)
+ke(2, 6) = ke(3, 2)
+ke(6, 5) = -ke(3, 2)
+ke(5, 6) = -ke(3, 2)
+
+ke(3, 3) = 4# * L ^ 2 * cv
+ke(6, 6) = ke(3, 3)
+
+ke(6, 3) = 2# * L ^ 2 * cv
+ke(3, 6) = ke(6, 3)
+
+'座標変換
+
+'[T]のゼロクリアー
+For i = 1 To nem
+  For j = 1 To nem
+   t(i, j) = 0#
+  Next j
+Next i
+
+'座標変換マトリックス[T]の計算
+t(1, 1) = (xj - xi) / L
+t(2, 2) = t(1, 1)
+t(4, 4) = t(1, 1)
+t(5, 5) = t(1, 1)
+
+t(1, 2) = (yj - yi) / L
+t(2, 1) = -t(1, 2)
+t(4, 5) = t(1, 2)
+t(5, 4) = -t(1, 2)
+
+t(3, 3) = 1#
+t(6, 6) = 1#
+
+'[T]t[ke]の計算
+For i = 1 To nem
+  For j = 1 To nem
+  s = 0
+    For k = 1 To nem
+    s = s + t(k, i) * ke(k, j)
+    Next k
+  tke(i, j) = s
+  Next j
+Next i
+
+'([T]t[ke])[T]の計算
+For i = 1 To nem
+  For j = 1 To nem
+  s = 0
+    For k = 1 To nem
+     s = s + tke(i, k) * t(k, j)
+    Next k
+  kge(i, j) = s
+  Next j
+Next i
+
+End Sub

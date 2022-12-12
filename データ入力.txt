@@ -1,0 +1,37 @@
+
+Sub データ入力()
+
+'nnd:1要素の節点数
+'ndg:1節点の自由度数
+nnd = 2
+ndg = 3
+
+'節点数と要素数の読み込み
+n0 = 3
+nod = Cells(n0, 2)
+nel = Cells(n0 + 1, 2)
+ 
+n1 = n0 + 3
+n2 = n1 + nod + 2
+ 
+'節点座標の読み込み
+For i = 1 To nod
+ xd(i) = Cells(n1 + i, 2)
+ yd(i) = Cells(n1 + i, 3)
+Next i
+  
+'要素の両端節点番号の読み込み
+For i = 1 To nel
+ indv(i, 1) = Cells(n2 + i, 2)
+ indv(i, 2) = Cells(n2 + i, 3)
+Next i
+
+'ヤング係数E, 断面積A,
+'断面2次モーメントIの読み込み
+For i = 1 To nel
+ eyg(i) = Cells(n2 + i, 4)
+ are(i) = Cells(n2 + i, 5)
+ sii(i) = Cells(n2 + i, 6)
+Next i
+
+End Sub

@@ -1,0 +1,47 @@
+
+Sub 重ね合わせ()
+
+'ゼロクリアー
+For i = 1 To nod * ndg
+  For j = 1 To nod * ndg
+  A(i, j) = 0
+  Next j
+Next i
+
+'重ね合わせ
+For ne = 1 To nel
+ Call 要素剛性マトリクス(ne)
+ 'マトリクスの行
+ For ip = 1 To nnd
+  For i = 1 To ndg
+   iG = ndg * (indv(ne, ip) - 1) + i
+   iL = ndg * (ip - 1) + i
+   'マトリクスの列
+   For jp = 1 To nnd
+    For j = 1 To ndg
+     jG = ndg * (indv(ne, jp) - 1) + j
+     jL = ndg * (jp - 1) + j
+     A(iG, jG) = A(iG, jG) + kge(iL, jL)
+    Next j
+   Next jp
+  Next i
+ Next ip
+Next ne
+
+End Sub
+
+Sub 外力ベクトル()
+
+For i = 1 To nod * ndg
+ B(i) = 0#
+Next i
+
+For nd = 1 To nod
+ For i = 1 To ndg
+  iG = ndg * (nd - 1) + i
+  B(iG) = Cells(n1 + nd, 6 + i)
+  If i = 3 Then B(iG) = -B(iG)
+ Next i
+Next nd
+
+End Sub

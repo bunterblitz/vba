@@ -1,0 +1,35 @@
+
+
+        If a > Nu - Tu Then
+                area = 1
+        ElseIf N > -Tu Then
+                area = 2
+        ElseIf N > -2 * Tu Then
+                area = 3
+        Else
+                area = 4
+        End If
+        Select Case area
+        Case area = 1
+                a = 0.5 * N
+                b = 2 * Su
+                ans = WorksheetFunction.Min(a, b)
+        Case area = 2
+                a1 = 0.5 * (N + Tu)
+                a2 = 0.5 * (Nu - Tu)
+                a = WorksheetFunction.Min(a1, a2)
+                T1 = Nu - Tu - N
+                T = WorksheetFunction.Min(T, Tu)
+                b = Su * (1 + (1 - (T / Tu) ^ 2) ^ 0.5)
+                ans = WorksheetFunction.Min(a, b)
+        Case area = 3
+                T = Tu - N
+                ans = Su * (1 - (T / Tu) ^ 2) ^ 0.5
+        Case area = 4
+                ans = "NG"
+        End Select
+        
+        base_qu = ans
+    
+
+

@@ -1,9 +1,7 @@
-
-Sub fast(ByRef x() As Complex, N As Integer, IND)
+Sub FAST(N, ByRef x() As Complex, IND)
 Dim i As Single, j As Single, m As Single, k As Single
-Dim temp As Complex
+Dim temp As Complex, theta As Complex
 Dim kmax As Single, istep As Single
-Dim theta As Complex
     j = 1
     For i = 1 To N
         If i < j Then
@@ -11,8 +9,7 @@ Dim theta As Complex
             x(j) = x(i)
             x(i) = temp
         End If
-
-        m = N / 2
+    m = N / 2
         Do While (j > m)
             j = j - m
             m = m / 2
@@ -20,7 +17,6 @@ Dim theta As Complex
         Loop
         j = j + m
     Next
-
     kmax = 1
     Do While kmax < N
         istep = kmax * 2
